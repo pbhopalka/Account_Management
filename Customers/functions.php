@@ -54,7 +54,7 @@ function endform(){
 }
 
 function _link($a,$b){
-	echo "<a href='$b'>$a</a>";
+	echo"<button id=$b type=submit><a href='$b'>$a</a></button><br>";
 }
 
 function table_cust(){

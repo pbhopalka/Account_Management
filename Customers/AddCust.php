@@ -15,6 +15,7 @@ item("Email",'text','email');
 item("Phone",'text','phone');
 item("",'submit','roll');
 _link("Show Costumers","ShowCust.php");
+_link("Index Page","../index.php");
 endform();
 _Footer();
 ?>

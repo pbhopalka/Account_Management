@@ -1,6 +1,6 @@
 <?php
 require_once("functions.php");
-require_once("includes/global.php");
+require_once("../includes/global.php");
 
 _Header("CusE");
 
