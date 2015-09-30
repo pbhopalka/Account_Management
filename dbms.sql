@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 30, 2015 at 07:01 PM
+-- Generation Time: Sep 30, 2015 at 09:28 PM
 -- Server version: 5.6.25-0ubuntu0.15.04.1
 -- PHP Version: 5.6.4-4ubuntu6.2
 
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `bill_record` (
 --
 
 CREATE TABLE IF NOT EXISTS `customer_details` (
-  `Cust_ID` int(10) NOT NULL,
+`Cust_ID` int(10) NOT NULL,
   `Cust_Name` varchar(100) NOT NULL,
   `District` varchar(50) NOT NULL,
   `Street` varchar(50) DEFAULT NULL,
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `ledger` (
 --
 
 CREATE TABLE IF NOT EXISTS `manager` (
-  `ID` int(11) NOT NULL,
+`ID` int(11) NOT NULL,
   `Name` varchar(50) NOT NULL,
   `Role` varchar(20) NOT NULL DEFAULT 'Normal',
   `Username` varchar(20) NOT NULL,
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `manager` (
 --
 
 CREATE TABLE IF NOT EXISTS `payment_record` (
-  `Payment_ID` int(11) NOT NULL,
+`Payment_ID` int(11) NOT NULL,
   `Date` date NOT NULL,
   `Cust_ID` int(11) NOT NULL,
   `Amount` int(11) NOT NULL DEFAULT '0'
@@ -142,6 +142,25 @@ ALTER TABLE `manager`
 ALTER TABLE `payment_record`
  ADD PRIMARY KEY (`Payment_ID`);
 
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `customer_details`
+--
+ALTER TABLE `customer_details`
+MODIFY `Cust_ID` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `manager`
+--
+ALTER TABLE `manager`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `payment_record`
+--
+ALTER TABLE `payment_record`
+MODIFY `Payment_ID` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
