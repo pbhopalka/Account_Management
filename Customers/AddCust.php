@@ -1,8 +1,7 @@
 <?php
-$_SESSION["user"]=TRUE;
-//echo "sdssdsd";
-if(!isset($_SESSION["user"]))
-	header('location:index.php');
+if ($_SESSION['login_user'] == 'Superuser'){
+  header('Location: AddCust.php') && die();
+}
 
 require_once('functions.php');
 _Header("CusA");
