@@ -2,7 +2,7 @@
 require_once('functions.php');
 _Header('BillA');
 makeform(htmlspecialchars("AddedBill.php"));
-item("Bill_ID",'text','id');
+
 item("Date",'date','date');
 echo("Customer Name: ");
 //Show List of Customers

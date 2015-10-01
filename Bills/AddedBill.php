@@ -2,12 +2,12 @@
 require_once('functions.php');
 require_once("../includes/global.php");
 _Header("BillAd");
-$id =$_POST["id"];
+
 $date =$_POST["date"];
 $amt =$_POST["amt"];
 $cid =$_POST["cid"];
 
-$sql = "INSERT INTO bill_record VALUES($id,'$date','$cid',$amt)";
+$sql = "INSERT INTO bill_record(Date,Cust_ID,Amount) VALUES('$date','$cid',$amt)";
 
 if($mysqli->query($sql)===TRUE){
 	//update cust table
