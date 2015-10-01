@@ -6,6 +6,7 @@
  <html>
  <head>
    <title>ACMS: View Payments</title>
+   <link href='../css/bootstrap.min.css' rel='stylesheet' media='screen'>
  </head>
  <body>
    <h1>Payments Record</h1>

@@ -6,6 +6,7 @@
 <html>
   <head>
     <title>ACMS: Make Payment</title>
+    <link href='../css/bootstrap.min.css' rel='stylesheet' media='screen'>
   </head>
   <body>
     <div id="container-sign-in">

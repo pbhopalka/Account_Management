@@ -1,28 +1,28 @@
 <?php
 function _Header($page) {
-    
+
     if($page=='CusA'){
-		echo "<HTML><HEAD><TITLE>Add New Customer</TITLE></HEAD><BODY>";
+		echo "<HTML><HEAD><TITLE>Add New Customer</TITLE><link href='../css/bootstrap.min.css' rel='stylesheet' media='screen'></HEAD><BODY>";
 		echo "<h4>Add New Customer</h4> ";
 	}
 	if($page=='CusE'){
-		
-		echo "<HTML><HEAD><TITLE>New Customer Addition Error</TITLE></HEAD><BODY>";
+
+		echo "<HTML><HEAD><TITLE>New Customer Addition Error</TITLE><link href='../css/bootstrap.min.css' rel='stylesheet' media='screen'></HEAD><BODY>";
 		echo "<h4>New Customer Addition Error</h4>";
-		
-		
+
+
 	}
 	if($page=='CusS'){
-		
-		echo "<HTML><HEAD><TITLE>Customers</TITLE></HEAD><BODY>";
+
+		echo "<HTML><HEAD><TITLE>Customers</TITLE><link href='../css/bootstrap.min.css' rel='stylesheet' media='screen'></HEAD><BODY>";
 		echo "<h4>Customer's Details</h4>";
-		
+
 	}
-	
+
 	if($page=='Ledger'){
-		echo "<HTML><HEAD><TITLE>Ledger</TITLE></HEAD><BODY>";
+		echo "<HTML><HEAD><TITLE>Ledger</TITLE><link href='css/bootstrap.min.css' rel='stylesheet' media='screen'></HEAD><BODY>";
 		echo "<h4>Ledger</h4> ";
-	} 
+	}
 }
 
 function _Footer() {
@@ -66,7 +66,7 @@ function table_cust(){
 	echo '<table border="1" >
 			<tr>
 				<th>Customer ID</th>
-				<th>Name</th> 
+				<th>Name</th>
 				<th>Address</th>
 				<th>Email ID</th>
 				<th>Phone No.</th>
@@ -92,7 +92,7 @@ function table_l(){
 			<tr>
 				<th>Date</th>
 				<th>Bill Amount</th>
-				<th>Payment Amount</th> 
+				<th>Payment Amount</th>
 			</tr>';
 }
 function l_details($row){

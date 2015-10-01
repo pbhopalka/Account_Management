@@ -1,6 +1,7 @@
 <html>
 <head>
   <title>ACMS</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
   <h1>Welcome to Normal Page</h1>
