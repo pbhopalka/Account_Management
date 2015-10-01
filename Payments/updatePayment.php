@@ -13,6 +13,8 @@
   $sql = "INSERT INTO payment_record(Date,Cust_ID,Amount) VALUES ('$date', $cust, $amount)";
   if($mysqli->query($sql)===TRUE){
     echo 'Success';
+    $sql = "UPDATE customer_details SET Pending_Amount = Pending_Amount - {$amount} WHERE Cust_ID = {$cust}";
+    $mysqli->query($sql);
     //die();
   	header('location:viewPayment.php');
   }

@@ -22,7 +22,7 @@
     echo $row['Cust_Name'];
     //echo "<option value='".$c->id."' ".$selected.">".$c->name."</option>" ;
     echo "<option value='".$row['Cust_ID']."'>".$row['Cust_Name']."</option>";
-}
+  }
 ?>
         </select>
         <input id="amount" name="payment_amount" type="text" placeholder="Amount">
