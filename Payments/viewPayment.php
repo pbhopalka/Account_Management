@@ -12,14 +12,22 @@
 <?php
   $sql = "SELECT * FROM payment_record";
   $result = $mysqli->query($sql);
-  payment_table();
-  while ($row=$result->fetch_assoc()){
-    payment_details($row);
-    echo '<br>';
+  if ($result->num_rows <=0){
+    $sql = "ALTER TABLE payment_record auto_increment = 1";
+    $result = $mysqli->query($sql);
+    echo 'No payment entries<br>';
   }
-  end_table();
+  else{
+    payment_table();
+    while ($row=$result->fetch_assoc()){
+      payment_details($row);
+      echo '<br>';
+    }
+    end_table();
+  }
 ?>
-   <button id="index" type="submit"><a href="remove.php">Remove payment</a></button><br>
+   <button id="index" type="submit"><a href="removePayment.php?condition=all">Remove all</a></button><br>
+   <button id="index" type="submit"><a href="addPayment.php">Add Another Payment</a></button><br>
    <button id="index" type="submit"><a href="../index.php">Index</a></button><br>
    <button id="logout" type="submit"><a href="../logout.php">Logout</a></button>
  </body>
