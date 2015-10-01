@@ -169,6 +169,9 @@ MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 ALTER TABLE `payment_record`
 MODIFY `Payment_ID` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `bill_record`
+MODIFY `Bill_ID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --

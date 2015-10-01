@@ -22,9 +22,9 @@ if($result->num_rows > 0){
 	
 }
 else
-	echo "No Bills Added";
+	echo "No Bills Added<br>";
 
-_link("Add next Bill","AddBill.php");
+_link("Add Bill","AddBill.php");
 _link("Index Page","../index.php");
 
 ?>
