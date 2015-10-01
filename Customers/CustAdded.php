@@ -20,7 +20,7 @@ echo $email ;
 echo $phone ;
 
 
-$sql = "INSERT INTO customer_details(Cust_ID,Cust_Name,District,Street,State,Email,Phone) VALUES($phone, '$name' , '$dist' , '$street','$state','$email',$phone)";		
+$sql = "INSERT INTO customer_details(Cust_Name,District,Street,State,Email,Phone) VALUES('$name' , '$dist' , '$street','$state','$email',$phone)";
 
 echo "<br><br>";
 
@@ -28,7 +28,7 @@ if($mysqli->query($sql)===TRUE)
 	header('location:ShowCust.php');
 else{
 	echo "Error: " . $sql . "<br>" . $mysqli->error;
-	header('location:AddCust.php');
+	//header('location:AddCust.php');
 }
 
 

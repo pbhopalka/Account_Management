@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 30, 2015 at 09:28 PM
+-- Generation Time: Oct 01, 2015 at 12:54 PM
 -- Server version: 5.6.25-0ubuntu0.15.04.1
 -- PHP Version: 5.6.4-4ubuntu6.2
 
@@ -53,8 +53,8 @@ CREATE TABLE IF NOT EXISTS `bill_record` (
 --
 
 CREATE TABLE IF NOT EXISTS `customer_details` (
-`Cust_ID` int(10) NOT NULL,
-  `Cust_Name` varchar(100) NOT NULL,
+`Cust_ID` int(11) NOT NULL,
+  `Cust_Name` varchar(50) NOT NULL,
   `District` varchar(50) NOT NULL,
   `Street` varchar(50) DEFAULT NULL,
   `State` varchar(50) NOT NULL,
@@ -87,7 +87,15 @@ CREATE TABLE IF NOT EXISTS `manager` (
   `Role` varchar(20) NOT NULL DEFAULT 'Normal',
   `Username` varchar(20) NOT NULL,
   `Password` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `manager`
+--
+
+INSERT INTO `manager` (`ID`, `Name`, `Role`, `Username`, `Password`) VALUES
+(1, 'Piyush', 'Superuser', 'pbhopalka', 'pb'),
+(2, 'Prabhav', 'Normal', 'prabhav', 'pb');
 
 -- --------------------------------------------------------
 
@@ -116,13 +124,13 @@ ALTER TABLE `bills`
 -- Indexes for table `bill_record`
 --
 ALTER TABLE `bill_record`
- ADD PRIMARY KEY (`Bill_ID`);
+ ADD PRIMARY KEY (`Bill_ID`), ADD KEY `Cust_ID` (`Cust_ID`);
 
 --
 -- Indexes for table `customer_details`
 --
 ALTER TABLE `customer_details`
- ADD PRIMARY KEY (`Cust_ID`), ADD UNIQUE KEY `Cust_ID` (`Cust_ID`);
+ ADD PRIMARY KEY (`Cust_ID`);
 
 --
 -- Indexes for table `ledger`
@@ -140,7 +148,7 @@ ALTER TABLE `manager`
 -- Indexes for table `payment_record`
 --
 ALTER TABLE `payment_record`
- ADD PRIMARY KEY (`Payment_ID`);
+ ADD PRIMARY KEY (`Payment_ID`), ADD KEY `Cust_ID` (`Cust_ID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -150,31 +158,38 @@ ALTER TABLE `payment_record`
 -- AUTO_INCREMENT for table `customer_details`
 --
 ALTER TABLE `customer_details`
-MODIFY `Cust_ID` int(10) NOT NULL AUTO_INCREMENT;
+MODIFY `Cust_ID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `manager`
 --
 ALTER TABLE `manager`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `payment_record`
 --
 ALTER TABLE `payment_record`
 MODIFY `Payment_ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- Constraints for dumped tables
+--
 
 --
---  ADD FOREIGN KEYS
+-- Constraints for table `bills`
 --
-
-ALTER TABLE `bill_record`
-ADD FOREIGN KEY(`Cust_ID`) REFERENCES customer_details(Cust_ID) ON DELETE CASCADE ON UPDATE CASCADE;
-
-ALTER TABLE `payment_record`
-ADD FOREIGN KEY(`Cust_ID`) REFERENCES customer_details(Cust_ID) ON DELETE CASCADE ON UPDATE CASCADE;
-
 ALTER TABLE `bills`
-ADD FOREIGN KEY(`Bill_ID`) REFERENCES bill_record(Bill_ID) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `bills_ibfk_1` FOREIGN KEY (`Bill_ID`) REFERENCES `bill_record` (`Bill_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
+--
+-- Constraints for table `bill_record`
+--
+ALTER TABLE `bill_record`
+ADD CONSTRAINT `bill_record_ibfk_1` FOREIGN KEY (`Cust_ID`) REFERENCES `customer_details` (`Cust_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `payment_record`
+--
+ALTER TABLE `payment_record`
+ADD CONSTRAINT `payment_record_ibfk_1` FOREIGN KEY (`Cust_ID`) REFERENCES `customer_details` (`Cust_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
