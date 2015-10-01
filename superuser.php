@@ -7,6 +7,6 @@
   <button id="logout" type="submit"><a href="logout.php">Logout</a></button><br>
   <button id="AddCust" type="submit"><a href="Customers/AddCust.php">Add Customer</a></button><br>
   <button id="ViewCust" type="submit"><a href="Customers/ShowCust.php">View Customers</a></button><br>
-  <button id="AddPayment" type="submit"><a href="payments.php">Make Payment</a></button><br>
+  <button id="AddPayment" type="submit"><a href="Payments/addPayments.php">Make Payment</a></button><br>
 </body>
 </html>

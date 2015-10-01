@@ -1,7 +1,7 @@
 <?php
   require_once("includes/global.php");
 
-  if (isset($_SESSION['username']))
+  if (isset($_SESSION['login_user']))
     header("location: index.php") && die();
 else if (! isset($_POST['username'])){
     header ( 'Content-type: text/html; charset=utf-8' );

@@ -1,5 +1,6 @@
 <?php
-  require_once("includes/global.php");
+  require_once("../includes/global.php");
+  //echo $_SESSION['login_user'];
 ?>
 <!DOCTYPE html>
 <html>

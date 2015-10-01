@@ -1,5 +1,5 @@
 <?php
-  require_once("includes/global.php");
+  require_once("../includes/global.php");
 
 
   $date = $_POST['payment_date'];
@@ -19,7 +19,7 @@
   else{
   	echo "Error: " . $sql . "<br>" . $mysqli->error;
   	//die();
-    header('location:index.php');
+    header('location:../index.php');
   }
 
 ?>
