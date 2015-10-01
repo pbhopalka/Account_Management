@@ -1,9 +1,4 @@
 <?php
-$_SESSION["user"]=TRUE;
-//echo "sdssdsd";
-if(!isset($_SESSION["user"]))
-	header('location:index.php');
-
 require_once('functions.php');
 _Header("CusA");
 makeform(htmlspecialchars("CustAdded.php"));
