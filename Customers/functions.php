@@ -18,6 +18,11 @@ function _Header($page) {
 		echo "<h4>Customer's Details</h4>";
 		
 	}
+	
+	if($page=='Ledger'){
+		echo "<HTML><HEAD><TITLE>Ledger</TITLE></HEAD><BODY>";
+		echo "<h4>Ledger</h4> ";
+	} 
 }
 
 function _Footer() {
@@ -79,6 +84,23 @@ function cust_details($row){
   </tr>';
 }
 function end_table(){
-	echo "</table>";
+	echo "</table><br>";
 }
+
+function table_l(){
+	echo '<table border="1" >
+			<tr>
+				<th>Date</th>
+				<th>Bill Amount</th>
+				<th>Payment Amount</th> 
+			</tr>';
+}
+function l_details($row){
+	echo '<tr>
+    <td>'.$row["Date"].'</td>
+    <td>'.$row["Bill_Amount"].'</td>
+    <td>'.$row["Payment_Received"].'</td>
+  </tr>';
+}
+
 ?>

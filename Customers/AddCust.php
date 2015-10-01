@@ -1,8 +1,4 @@
 <?php
-if ($_SESSION['login_user'] == 'Superuser'){
-  header('Location: AddCust.php') && die();
-}
-
 require_once('functions.php');
 _Header("CusA");
 makeform(htmlspecialchars("CustAdded.php"));

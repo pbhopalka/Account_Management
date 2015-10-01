@@ -1,7 +1,4 @@
 <?php
-if ($_SESSION['login_user'] == 'Superuser'){
-  header('Location: ShowCust.php') && die();
-}
 
 require_once("../includes/global.php");
 require_once("functions.php");

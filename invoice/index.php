@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
@@ -21,11 +21,8 @@
 		
 		<div id="identity">
 		
-            <textarea id="address">Chris Coyier
-123 Appleseed Street
-Appleville, WI 53719
-
-Phone: (555) 555-5555</textarea>
+            <textarea id="address">NIT Calicut
+Kerala 673601, India</textarea>
 
             <div id="logo">
 
@@ -81,10 +78,10 @@ c/o Steve Widget</textarea>
 		      <th>Quantity</th>
 		      <th>Price</th>
 		  </tr>
-		  
+		  <form>
 		  <tr class="item-row">
-		      <td class="item-name"><div class="delete-wpr"><textarea>Web Updates</textarea><a class="delete" href="javascript:;" title="Remove row">X</a></div></td>
-		      <td class="description"><textarea>Monthly web updates for http://widgetcorp.com (Nov. 1 - Nov. 30, 2009)</textarea></td>
+		      <td class="item-name"><div class="delete-wpr"><input type=text name=item><a class="delete" href="javascript:;" title="Remove row">X</a></div></td>
+		      <td class="description"><input type=text name=item></td>
 		      <td><textarea class="cost">$650.00</textarea></td>
 		      <td><textarea class="qty">1</textarea></td>
 		      <td><span class="price">$650.00</span></td>
