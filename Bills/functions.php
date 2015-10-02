@@ -46,7 +46,7 @@ function table_bill(){
 function bill_details($cname,$row){
 	echo '<tr>
     <td>'.$row["Bill_ID"].'</td>
-    <td>'.$cname.'</td>
+    <td><a href="../Customers/ICust.php?query=' . $row["Cust_ID"]  .'">'. $cname.'</a></td>
     <td>'.$row["Date"].'</td>
     <td>'.$row["Amount"].'</td>
     <td><button id="submit" type="submit"><a href="#">Remove Bill</a></button></td>

@@ -14,8 +14,6 @@ if($result->num_rows > 0){
 		$r = $mysqli->query($sql);
 		$r = $r->fetch_assoc();
 		$r = $r["Cust_Name"];
-	
-	
 		bill_details($r,$row);
 	}
 	end_table();
