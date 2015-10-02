@@ -1,7 +1,7 @@
 <?php
 require_once('../includes/global.php');
 
-function _Header($page) {
+function _Header($page,$info) {
 
    
 	if($page=="L"){
@@ -9,9 +9,15 @@ function _Header($page) {
 		echo "<h4>Ledger</h4> ";
 	}
 	
+	if($page=="Ld"){
+		echo "<HTML><HEAD><TITLE>Ledger on {$info}</TITLE><link href='../css/bootstrap.min.css' rel='stylesheet' media='screen'></HEAD><BODY>";
+		echo "<h4>Ledger on {$info}</h4> ";
+	}
+	
 }
 
 function _Footer() {
+	_link("Home","../index.php");
     echo "</BODY></HTML>";
 }
 
@@ -20,7 +26,7 @@ function _Footer() {
 
 
 function _link($a,$b){
-	echo"<button id=$b type=submit><a href='$b'>$a</a></button><br>";
+	echo"<br><button id=$b type=submit><a href='$b'>$a</a></button><br>";
 }
 
 function end_table(){
@@ -37,7 +43,7 @@ function table_l(){
 }
 function l_details($row){
 	echo '<tr>
-    <td><a href=LedgerDetails.php?query="' . $row["Date"]  .'">'. $row["Date"].'</a></td>
+    <td><a href=LedgerDetails.php?query=' . $row["Date"]  .'>'. $row["Date"].'</a></td>
     <td>'.$row["Bill_Amount"].'</td>
     <td>'.$row["Payment_Received"].'</td>
   </tr>';

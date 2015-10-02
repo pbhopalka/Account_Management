@@ -21,8 +21,6 @@ else
 	echo "No Transactions Yet<br>";
 
 
-_link("Index Page","../index.php");	
-	
-	
+_Footer();	
 	
 ?>

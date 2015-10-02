@@ -3,13 +3,14 @@
 require_once("../includes/global.php");
 require_once("functions.php");
 
-$sql = "Select Bill_ID,Cust_ID,Amount from bill_record where Date={$_GET['query']}";
+$sql = "Select Bill_ID,Cust_ID,Amount from bill_record where Date=".'"'."{$_GET['query']}".'"';
+
 
 $res = $mysqli->query($sql);
 
 //BILL RECORDS
 
-
+_Header("Ld",$_GET['query']);
 
 if($res->num_rows > 0 ){
 	echo "<h4>Bill Records : </h4>";
@@ -54,9 +55,9 @@ if($res->num_rows > 0 ){
 	end_table();
 }
 else{
-	echo "No Payment Records for {$cname} Yet";
+	echo "No Payment Records on {$_GET['query']} Yet";
 }
-
+_Footer();
 ?>
 
 
