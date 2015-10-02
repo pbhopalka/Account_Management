@@ -24,22 +24,13 @@
             <textarea id="address">NIT Calicut
 Kerala 673601, India</textarea>
 
-            <div id="logo">
-
-              <div id="logoctr">
-                <a href="javascript:;" id="change-logo" title="Change logo">Change Logo</a>
-                <a href="javascript:;" id="save-logo" title="Save changes">Save</a>
-                |
-                <a href="javascript:;" id="delete-logo" title="Delete logo">Delete Logo</a>
-                <a href="javascript:;" id="cancel-logo" title="Cancel changes">Cancel</a>
-              </div>
-
+            
               <div id="logohelp">
                 <input id="imageloc" type="text" size="50" value="" /><br />
                 (max width: 540px, max height: 100px)
               </div>
               <img id="image" src="images/logo.png" alt="logo" />
-            </div>
+            
 		
 		</div>
 		

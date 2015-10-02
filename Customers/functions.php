@@ -1,5 +1,5 @@
 <?php
-function _Header($page) {
+function _Header($page,$cname="") {
 
     if($page=='CusA'){
 		echo "<HTML><HEAD><TITLE>Add New Customer</TITLE><link href='../css/bootstrap.min.css' rel='stylesheet' media='screen'></HEAD><BODY>";
@@ -22,6 +22,13 @@ function _Header($page) {
 	if($page=='Ledger'){
 		echo "<HTML><HEAD><TITLE>Ledger</TITLE><link href='css/bootstrap.min.css' rel='stylesheet' media='screen'></HEAD><BODY>";
 		echo "<h4>Ledger</h4> ";
+	}
+	
+	if($page=='CusD'){
+
+		echo "<HTML><HEAD><TITLE>{$cname} - Details</TITLE><link href='../css/bootstrap.min.css' rel='stylesheet' media='screen'></HEAD><BODY>";
+		echo "<h2>{$cname}</h2>";
+
 	}
 }
 
@@ -73,16 +80,55 @@ function table_cust(){
 				<th>Pending Amount</th>
 			</tr>';
 }
+
+
+
+
 function cust_details($row){
 	echo '<tr>
     <td>'.$row["Cust_ID"].'</td>
-    <td>'.$row["Cust_Name"].'</td>
+    <td><a href="ICust.php?query=' . $row["Cust_ID"]  .'">'. $row["Cust_Name"].'</a></td>
     <td>'.$row["Street"].','.$row["District"].','. $row["State"].'</td>
     <td>'.$row["Email"].'</td>
     <td>'.$row["Phone"].'</td>
     <td>'.$row["Pending_Amount"].'</td>
   </tr>';
 }
+
+function table_bill(){
+	echo '<table border="1" >
+			<tr>
+				<th>Bill ID</th>
+				<th>Date</th>
+				<th>Amount</th>
+			</tr>';
+}
+
+function bill_details($row){
+	echo '<tr>
+    <td>'.$row["Bill_ID"].'</td>
+    <td>'.$row["Date"].'</td>
+    <td>'.$row["Amount"].'</td>
+  </tr>';
+}
+
+function table_pay(){
+	echo '<table border="1" >
+			<tr>
+				<th>Payment ID</th>
+				<th>Date</th>
+				<th>Amount</th>
+			</tr>';
+}
+
+function pay_details($row){
+	echo '<tr>
+    <td>'.$row["Payment_ID"].'</td>
+    <td>'.$row["Date"].'</td>
+    <td>'.$row["Amount"].'</td>
+  </tr>';
+}
+
 function end_table(){
 	echo "</table><br>";
 }
