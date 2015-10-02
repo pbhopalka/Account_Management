@@ -20,7 +20,7 @@ function _Header($page,$cname="") {
 	}
 
 	if($page=='Ledger'){
-		echo "<HTML><HEAD><TITLE>Ledger</TITLE><link href='css/bootstrap.min.css' rel='stylesheet' media='screen'></HEAD><BODY>";
+		echo "<HTML><HEAD><TITLE>Ledger</TITLE><link href='../css/bootstrap.min.css' rel='stylesheet' media='screen'></HEAD><BODY>";
 		echo "<h4>Ledger</h4> ";
 	}
 	

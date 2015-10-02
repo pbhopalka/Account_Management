@@ -2,6 +2,7 @@
 
 require_once("../includes/global.php");
 require_once("functions.php");
+
 $sql = "Select Cust_Name,Pending_Amount from customer_details where Cust_ID={$_GET['query']}";
 $res = $mysqli->query($sql);
 
