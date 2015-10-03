@@ -49,7 +49,7 @@ function bill_details($cname,$row){
     <td><a href="../Customers/ICust.php?query=' . $row["Cust_ID"]  .'">'. $cname.'</a></td>
     <td>'.$row["Date"].'</td>
     <td>'.$row["Amount"].'</td>
-    <td><button id="submit" type="submit"><a href="#">Remove Bill</a></button></td>
+    <td><button id="submit" type="submit"><a href="removeBill.php?query='.$row["Bill_ID"].'">Remove Bill</a></button></td>
   </tr>';
 }
 

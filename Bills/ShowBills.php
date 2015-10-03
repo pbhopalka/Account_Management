@@ -17,13 +17,14 @@ if($result->num_rows > 0){
 		bill_details($r,$row);
 	}
 	end_table();
-	
-}
-else
-	echo "No Bills Added<br>";
 
+}
+else{
+	$sql = "ALTER TABLE bill_record auto_increment = 1";
+	$result = $mysqli->query($sql);
+	echo "No Bills Added<br>";
+}
 _link("Add Bill","AddBill.php");
 _link("Index Page","../index.php");
 
 ?>
-
