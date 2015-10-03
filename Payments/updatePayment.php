@@ -15,6 +15,11 @@
     echo 'Success';
     $sql = "UPDATE customer_details SET Pending_Amount = Pending_Amount - {$amount} WHERE Cust_ID = {$cust}";
     $mysqli->query($sql);
+    $sql = "UPDATE ledger SET Payment_Received = Payment_Received + {$amount} WHERE Date = '{$date}'";
+    echo $sql;
+    $result = $mysqli->query($sql);
+    if ($result)
+      echo "Updated";
     //die();
   	header('location:viewPayment.php');
   }

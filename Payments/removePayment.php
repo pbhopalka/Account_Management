@@ -12,6 +12,10 @@
       $result2 = $mysqli->query($sql);
       $row2 = $result2->fetch_assoc();
       $pending_amount = $row2['Amount'];
+      $date = $row2['Date'];
+      $sql = "UPDATE ledger SET Payment_Received = Payment_Received - {$pending_amount} WHERE Date = '{$date}'";
+      echo $sql;
+      $mysqli->query($sql);
       $sql = "UPDATE customer_details SET Pending_Amount = Pending_Amount + {$pending_amount} WHERE Cust_ID = {$cust_id}";
       echo $sql;
       $mysqli->query($sql);
@@ -37,10 +41,14 @@
   $result = $mysqli->query($sql);
   $row = $result->fetch_assoc();
   $cust_id = $row['Cust_ID'];
-  $sql = "SELECT Amount FROM payment_record WHERE Cust_ID = {$cust_id}";
+  $sql = "SELECT Amount, Date FROM payment_record WHERE Cust_ID = {$cust_id}";
   $result2 = $mysqli->query($sql);
   $row2 = $result2->fetch_assoc();
   $pending_amount = $row2['Amount'];
+  $date = $row2['Date'];
+  $sql = "UPDATE ledger SET Payment_Received = Payment_Received - {$pending_amount} WHERE Date = '{$date}'";
+  echo $sql;
+  $mysqli->query($sql);
   $sql = "UPDATE customer_details SET Pending_Amount = Pending_Amount + {$pending_amount} WHERE Cust_ID = {$cust_id}";
   echo $sql;
   $mysqli->query($sql);
