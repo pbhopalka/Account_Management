@@ -36,7 +36,7 @@ else{
 
 
 //Payment Records
-$sql = "Select Cust_ID,Payment_ID,Amount from payment_record where Date={$_GET['query']}";
+$sql = "Select Cust_ID,Payment_ID,Amount from payment_record where Date='{$_GET['query']}'";
 $res = $mysqli->query($sql);
 if($res->num_rows > 0 ){
 	echo "<h4>Payment Records: </h4>";
