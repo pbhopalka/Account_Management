@@ -5,17 +5,17 @@ function payment_table(){
 			<tr>
 				<th>Payment ID</th>
 				<th>Date</th>
-				<th>Customer ID</th>
+				<th>Customer Name</th>
 				<th>Amount</th>
 			</tr>';
 }
 
-function payment_details($row){
+function payment_details($row, $cust_name){
 	//echo $fdata[0];
 	echo '<tr>
     <td>'.$row["Payment_ID"].'</td>
     <td>'.$row["Date"].'</td>
-    <td>'.$row["Cust_ID"].'</td>
+    <td>'.$cust_name.'</td>
     <td>'.$row["Amount"].'</td>
     <td><button id="submit" type="submit"><a href="removePayment.php?query='.$row["Payment_ID"].'">Remove Payment</a></button></td>
   </tr>';
