@@ -6,10 +6,41 @@
  <html>
  <head>
    <title>ACMS: View Payments</title>
-   <link href='../css/bootstrap.min.css' rel='stylesheet' media='screen'>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+   <meta name="mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+
+   <script src="../trying_design/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+   <link rel="import" href="../trying_design/bower_components/iron-icons/iron-icons.html">
+   <link rel="import" href="../trying_design/bower_components/paper-toolbar/paper-toolbar.html">
+   <link rel="import" href="../trying_design/bower_components/font-roboto/roboto.html">
+   <link rel="import" href="../trying_design/bower_components/paper-button/paper-button.html">
+   <link rel="import" href="../trying_design/bower_components/neon-animation/neon-animation.html">
+   <link rel="import" href="../trying_design/bower_components/paper-card/paper-card.html">
+   <link rel="import" href="../trying_design/bower_components/paper-checkbox/paper-checkbox.html">
+   <link rel="import" href="../trying_design/bower_components/paper-icon-button/paper-icon-button.html">
+   <link rel="import" href="../trying_design/bower_components/paper-input/paper-input.html">
+   <link rel="import" href="../trying_design/bower_components/paper-fab/paper-fab.html">
+   <link rel="import" href="../trying_design/bower_components/paper-tabs/paper-tabs.html">
+   <link rel="import" href="../trying_design/bower_components/paper-toast/paper-toast.html">
+   <link rel="import" href="../trying_design/bower_components/paper-dialog/paper-dialog.html">
+   <link rel="import" href="../trying_design/bower_components/paper-styles/color.html">
+
+   <link rel="stylesheet" href="../trying_design/styles.css">
+
  </head>
  <body>
-   <h1>Payments Record</h1>
+   <paper-toolbar>
+     <span class="flex"><h1>Payments Record</h1></span>
+   </paper-toolbar>
+   <section>
+     <paper-tabs>
+       <paper-tab onclick="location.href='removePayment.php?condition=all'">Remove all</paper-tab>
+       <paper-tab onclick="location.href='../index.php'">Home</paper-tab>
+       <paper-tab onclick="location.href='addPayment.php'">Add Payment</paper-tab>
+     </paper-tabs>
+   </section>
 <?php
   $sql = "SELECT * FROM payment_record";
   $result = $mysqli->query($sql);
@@ -32,6 +63,7 @@
     end_table();
   }
 ?>
+
    <button id="index" type="submit"><a href="removePayment.php?condition=all">Remove all</a></button><br>
    <button id="index" type="submit"><a href="addPayment.php">Add Another Payment</a></button><br>
    <button id="index" type="submit"><a href="../index.php">Index</a></button><br>
