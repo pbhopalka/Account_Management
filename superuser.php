@@ -19,6 +19,7 @@
   <link rel="import" href="trying_design/bower_components/paper-tabs/paper-tabs.html">
   <link rel="import" href="trying_design/bower_components/paper-toast/paper-toast.html">
   <link rel="import" href="trying_design/bower_components/paper-dialog/paper-dialog.html">
+  <link rel="import" href="trying_design/bower_components/paper-tooltip/paper-tooltip.html">
   <link rel="import" href="trying_design/bower_components/paper-styles/color.html">
 
   <link rel="stylesheet" href="trying_design/styles.css">
@@ -70,6 +71,9 @@
   .pink {
     --paper-card-header-color: var(--paper-pink-500);
   }
+  #customers{
+    float:right;
+  }
 </style>
 
 </head>
@@ -77,12 +81,13 @@
   <paper-toolbar>
     <paper-icon-button icon="menu"></paper-icon-button>
     <span class="flex">Superuser Page</span>
-  </paper-toolbar>
 
-<div>
+
    <section onclick="clickHandler(event)">
+       <paper-icon-button id="logout" src="img/logout.png"data-dialog="modal">-></paper-icon-button>
+       <paper-tooltip for="logout" offset="0">Logout </paper-tooltip>
      <!--Choose the appropriate data-dialog: either animated or modal-->
-      <paper-button data-dialog="modal" raised right>Logout</paper-button>
+      <!--<paper-button data-dialog="modal" raised right>Logout</paper-button>-->
 
     <!--Animation Dialog box-->
       <paper-dialog id="animated" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop>
@@ -103,11 +108,12 @@
      </div>
    </paper-dialog>
   </section>
-</div>
+  </paper-toolbar>
 
 <div id="cards">
+  <div id="customers" >
   <paper-card heading="Customers">
-    <paper-fab icon="add" onclick="location.href='Customers/AddCust.php'"></paper-fab>
+    <paper-fab icon="add" onclick="location.href='Customers/AddCust.php'" class="green"></paper-fab>
     <div class="card-actions">
       <paper-button onclick="location.href='Customers/ShowCust.php'"view>View</paper-button>
     </div>
@@ -119,9 +125,10 @@
       <paper-button onclick="location.href='Bills/ShowBills.php'"view>View</paper-button>
     </div>
   </paper-card>
+</div>
 
   <paper-card heading="Payments">
-    <paper-fab icon="add" onclick="location.href='Payments/addPayment.php'"></paper-fab>
+    <paper-fab icon="add" onclick="location.href='Payments/addPayment.php'"class="blue"></paper-fab>
     <div class="card-actions">
       <paper-button onclick="location.href='Payments/viewPayment.php'"view>View</paper-button>
     </div>
@@ -129,7 +136,7 @@
 
   <paper-card heading="Ledger">
   <div class="card-actions">
-    <paper-button onclick="location.href='Payments/viewPayment.php'">View</paper-button>
+    <paper-button onclick="location.href='Ledger/ViewLedger.php'">View</paper-button>
   </div>
 </paper-card>
 

@@ -3,7 +3,6 @@ function _Header($page,$cname="") {
 
     if($page=='CusA'){
 		echo "<HTML><HEAD><TITLE>Add New Customer</TITLE><link href='../css/bootstrap.min.css' rel='stylesheet' media='screen'></HEAD><BODY>";
-		echo "<h4>Add New Customer</h4> ";
 	}
 	if($page=='CusE'){
 
@@ -23,7 +22,7 @@ function _Header($page,$cname="") {
 		echo "<HTML><HEAD><TITLE>Ledger</TITLE><link href='../css/bootstrap.min.css' rel='stylesheet' media='screen'></HEAD><BODY>";
 		echo "<h4>Ledger</h4> ";
 	}
-	
+
 	if($page=='CusD'){
 
 		echo "<HTML><HEAD><TITLE>{$cname} - Details</TITLE><link href='../css/bootstrap.min.css' rel='stylesheet' media='screen'></HEAD><BODY>";

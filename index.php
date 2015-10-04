@@ -34,6 +34,17 @@ else if ($_SESSION['login_user'] == 'Normal'){
   <link rel="import" href="trying_design/bower_components/paper-styles/color.html">
 
   <link rel="stylesheet" href="trying_design/styles.css">
+
+  <style>
+  #cards{
+    @apply(--layout-vertcal);
+    @apply(--center-justified);
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  </style>
 </head>
 <body unresolved>
 

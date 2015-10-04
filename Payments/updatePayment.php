@@ -15,11 +15,29 @@
     echo 'Success';
     $sql = "UPDATE customer_details SET Pending_Amount = Pending_Amount - {$amount} WHERE Cust_ID = {$cust}";
     $mysqli->query($sql);
-    $sql = "UPDATE ledger SET Payment_Received = Payment_Received + {$amount} WHERE Date = '{$date}'";
+
+    //adding date if not in Ledger
+    $sql = "SELECT Date FROM ledger WHERE Date='$date'";
     echo $sql;
-    $result = $mysqli->query($sql);
-    if ($result)
-      echo "Updated";
+    $res = $mysqli->query($sql);
+    if($res->num_rows > 0 ){
+      echo "yess";
+      $sql = "UPDATE ledger SET Payment_Received = Payment_Received + {$amount} WHERE Date='$date'";
+      echo "<br>".$sql;
+      $mysqli->query($sql);
+      echo "updated";
+    }
+    else{
+      echo "noo";
+      $sql = "INSERT INTO ledger VALUES('$date',0,$amount)";
+      echo $sql;
+      if($mysqli->query($sql)===TRUE)
+        echo "Inserted";
+      else{
+        echo "Nope";
+        echo $mysqli->error;
+      }
+    }
     //die();
   	header('location:viewPayment.php');
   }

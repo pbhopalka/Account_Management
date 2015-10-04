@@ -2,46 +2,47 @@
   require_once("../includes/global.php");
   require_once("functions.php");
   //echo $_SESSION['login_user'];
- ?>
- <html>
- <head>
-   <title>ACMS: View Payments</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-   <meta name="mobile-web-app-capable" content="yes">
-   <meta name="apple-mobile-web-app-capable" content="yes">
+  ?>
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>ACMS: Make Payment</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <meta name="mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-capable" content="yes">
 
-   <script src="../trying_design/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+      <script src="../trying_design/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 
-   <link rel="import" href="../trying_design/bower_components/iron-icons/iron-icons.html">
-   <link rel="import" href="../trying_design/bower_components/paper-toolbar/paper-toolbar.html">
-   <link rel="import" href="../trying_design/bower_components/font-roboto/roboto.html">
-   <link rel="import" href="../trying_design/bower_components/paper-button/paper-button.html">
-   <link rel="import" href="../trying_design/bower_components/neon-animation/neon-animation.html">
-   <link rel="import" href="../trying_design/bower_components/paper-card/paper-card.html">
-   <link rel="import" href="../trying_design/bower_components/paper-checkbox/paper-checkbox.html">
-   <link rel="import" href="../trying_design/bower_components/paper-icon-button/paper-icon-button.html">
-   <link rel="import" href="../trying_design/bower_components/paper-input/paper-input.html">
-   <link rel="import" href="../trying_design/bower_components/paper-fab/paper-fab.html">
-   <link rel="import" href="../trying_design/bower_components/paper-tabs/paper-tabs.html">
-   <link rel="import" href="../trying_design/bower_components/paper-toast/paper-toast.html">
-   <link rel="import" href="../trying_design/bower_components/paper-dialog/paper-dialog.html">
-   <link rel="import" href="../trying_design/bower_components/paper-styles/color.html">
+      <link rel="import" href="../trying_design/bower_components/iron-icons/iron-icons.html">
+      <link rel="import" href="../trying_design/bower_components/iron-form/iron-form.html">
+      <link rel="import" href="../trying_design/bower_components/paper-toolbar/paper-toolbar.html">
+      <link rel="import" href="../trying_design/bower_components/font-roboto/roboto.html">
+      <link rel="import" href="../trying_design/bower_components/paper-button/paper-button.html">
+      <link rel="import" href="../trying_design/bower_components/neon-animation/neon-animation.html">
+      <link rel="import" href="../trying_design/bower_components/paper-card/paper-card.html">
+      <link rel="import" href="../trying_design/bower_components/paper-checkbox/paper-checkbox.html">
+      <link rel="import" href="../trying_design/bower_components/paper-icon-button/paper-icon-button.html">
+      <link rel="import" href="../trying_design/bower_components/paper-input/paper-input.html">
+      <link rel="import" href="../trying_design/bower_components/paper-fab/paper-fab.html">
+      <link rel="import" href="../trying_design/bower_components/paper-tabs/paper-tabs.html">
+      <link rel="import" href="../trying_design/bower_components/paper-toast/paper-toast.html">
+      <link rel="import" href="../trying_design/bower_components/paper-dialog/paper-dialog.html">
+      <link rel="import" href="../trying_design/bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+      <link rel="import" href="../trying_design/bower_components/paper-styles/color.html">
+  		<link rel="import" href="../trying_design/bower_components/paper-tooltip/paper-tooltip.html">
 
-   <link rel="stylesheet" href="../trying_design/styles.css">
-
- </head>
- <body>
-   <paper-toolbar>
-     <span class="flex"><h1>Payments Record</h1></span>
-   </paper-toolbar>
-   <section>
-     <paper-tabs>
-       <paper-tab onclick="location.href='removePayment.php?condition=all'">Remove all</paper-tab>
-       <paper-tab onclick="location.href='../index.php'">Home</paper-tab>
-       <paper-tab onclick="location.href='addPayment.php'">Add Payment</paper-tab>
-     </paper-tabs>
-   </section>
-<?php
+      <link rel="stylesheet" href="../trying_design/styles.css">
+      </head>
+      <body>
+        <paper-toolbar>
+          <paper-icon-button id="back" src="../img/arrow-left.png" onclick="location.href='../index.php'">-></paper-icon-button>
+          <span class="flex">Payment Records</span>
+  				<paper-icon-button id="addpayment"icon="add" onclick="location.href='addPayment.php'">Add new Payment></paper-icon-button>
+  				<paper-tooltip for="addpayment" offset="0">Add new Payment</paper-tooltip>
+          <paper-icon-button id="remove" src="../img/delete.png" onclick="location.href='removePayment.php?condition=all'">Remove Payment</paper-icon-button>
+  				<paper-tooltip for="remove" offset="0">Remove All</paper-tooltip>
+        </paper-toolbar>
+  <?php
   $sql = "SELECT * FROM payment_record";
   $result = $mysqli->query($sql);
   if ($result->num_rows <=0){

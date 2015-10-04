@@ -8,7 +8,7 @@
       $cust_id = $row['Cust_ID'];
 
       //Updating Pending Amount in Customer Details
-      $sql = "SELECT Amount FROM payment_record WHERE Cust_ID = {$cust_id}";
+      $sql = "SELECT Amount, Date FROM payment_record WHERE Cust_ID = {$cust_id}";
       $result2 = $mysqli->query($sql);
       $row2 = $result2->fetch_assoc();
       $pending_amount = $row2['Amount'];
@@ -19,7 +19,6 @@
       $sql = "UPDATE customer_details SET Pending_Amount = Pending_Amount + {$pending_amount} WHERE Cust_ID = {$cust_id}";
       echo $sql;
       $mysqli->query($sql);
-
       //Deleting the Payment Record
       $sql = "DELETE FROM payment_record WHERE Payment_ID = {$payment_id}";
       $mysqli->query($sql);
