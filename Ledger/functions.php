@@ -1,19 +1,19 @@
 <?php
-require_once('../includes/global.php');
+require_once("../includes/global.php");
 
 function _Header($page,$info) {
 
-   
+
 	if($page=="L"){
 		echo "<HTML><HEAD><TITLE>Ledger</TITLE><link href='../css/bootstrap.min.css' rel='stylesheet' media='screen'></HEAD><BODY>";
 		echo "<h4>Ledger</h4> ";
 	}
-	
+
 	if($page=="Ld"){
 		echo "<HTML><HEAD><TITLE>Ledger on {$info}</TITLE><link href='../css/bootstrap.min.css' rel='stylesheet' media='screen'></HEAD><BODY>";
 		echo "<h4>Ledger on {$info}</h4> ";
 	}
-	
+
 }
 
 function _Footer() {
@@ -80,5 +80,21 @@ function pay_details($row,$cname="pp"){
     <td>'.$row["Amount"].'</td>
   </tr>';
 }
-?>
 
+function delete_if_zero($result){
+  while ($row = $result->fetch_assoc()){
+    if ($row['Payment_Received'] == 0 && $row['Bill_Amount'] == 0){
+      $sql = "DELETE FROM ledger WHERE Date = {$row['Date']}";
+      echo $sql;
+      $r = $mysqli->query($sql);
+      if ($r)
+        echo "Success";
+      else {
+        echo "Failure";
+
+      }
+      die();
+    }
+  }
+}
+?>

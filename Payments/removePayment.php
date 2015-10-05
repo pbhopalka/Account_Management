@@ -8,7 +8,7 @@
       $cust_id = $row['Cust_ID'];
 
       //Updating Pending Amount in Customer Details
-      $sql = "SELECT Amount, Date FROM payment_record WHERE Cust_ID = {$cust_id}";
+      $sql = "SELECT Amount, Date FROM payment_record WHERE Cust_ID = {$cust_id} AND Payment_ID = {$payment_id}";
       $result2 = $mysqli->query($sql);
       $row2 = $result2->fetch_assoc();
       $pending_amount = $row2['Amount'];
@@ -40,7 +40,7 @@
   $result = $mysqli->query($sql);
   $row = $result->fetch_assoc();
   $cust_id = $row['Cust_ID'];
-  $sql = "SELECT Amount, Date FROM payment_record WHERE Cust_ID = {$cust_id}";
+  $sql = "SELECT Amount, Date FROM payment_record WHERE Cust_ID = {$cust_id} AND Payment_ID={$payment_id}";
   $result2 = $mysqli->query($sql);
   $row2 = $result2->fetch_assoc();
   $pending_amount = $row2['Amount'];

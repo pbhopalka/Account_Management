@@ -39,7 +39,7 @@
       }
     }
     //die();
-  	header('location:viewPayment.php');
+  	//header('location:viewPayment.php');
   }
   else{
   	echo "Error: " . $sql . "<br>" . $mysqli->error;

@@ -55,8 +55,8 @@
     while ($row=$result->fetch_assoc()){
       $cust_id = $row['Cust_ID'];
       $sql = "SELECT Cust_Name FROM customer_details WHERE Cust_ID = {$cust_id}";
-      $result = $mysqli->query($sql);
-      $row2 = $result->fetch_assoc();
+      $result2 = $mysqli->query($sql);
+      $row2 = $result2->fetch_assoc();
       $cust_name = $row2['Cust_Name'];
       payment_details($row, $cust_name);
       echo '<br>';
