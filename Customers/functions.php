@@ -69,28 +69,30 @@ function _link($a,$b){
 }
 
 function table_cust(){
-	echo '<table border="1" >
-			<tr>
-				<th>Customer ID</th>
-				<th>Name</th>
-				<th>Address</th>
-				<th>Email ID</th>
-				<th>Phone No.</th>
-				<th>Pending Amount</th>
-			</tr>';
+	echo '<div class="table-responsive-vertical shadow-z-1">
+	  <!-- Table starts here -->  <br>
+	  <table id="table" class="table table-hover table-mc-light-blue">
+	      <thead>
+	        <tr>
+          <th>Customer ID</th>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Email ID</th>
+          <th>Phone No.</th>
+          <th>Pending Amount</
+	        </tr>
+	      </thead>
+	      <tbody>';
 }
-
-
-
 
 function cust_details($row){
 	echo '<tr>
-    <td>'.$row["Cust_ID"].'</td>
-    <td><a href="ICust.php?query=' . $row["Cust_ID"]  .'">'. $row["Cust_Name"].'</a></td>
-    <td>'.$row["Street"].','.$row["District"].','. $row["State"].'</td>
-    <td>'.$row["Email"].'</td>
-    <td>'.$row["Phone"].'</td>
-    <td>'.$row["Pending_Amount"].'</td>
+    <td data-title="Cust ID">'.$row["Cust_ID"].'</td>
+    <td data-title="Name"><a href="ICust.php?query=' . $row["Cust_ID"]  .'">'. $row["Cust_Name"].'</a></td>
+    <td data-title="Address">'.$row["District"].','. $row["State"].'</td>
+    <td data-title="Email-id">'.$row["Email"].'</td>
+    <td data-title="Phone">'.$row["Phone"].'</td>
+    <td data-title="Pending Amount">'.$row["Pending_Amount"].'</td>
   </tr>';
 }
 
@@ -129,7 +131,9 @@ function pay_details($row){
 }
 
 function end_table(){
-	echo "</table><br>";
+	echo "</tbody>
+  </table>
+  </div>";
 }
 
 function table_l(){

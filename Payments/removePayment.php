@@ -36,7 +36,7 @@
   }
 
   $payment_id = $_GET['query'];
-  $sql = "SELECT Cust_ID FROM payment_record";
+  $sql = "SELECT Cust_ID FROM payment_record WHERE Payment_ID = {$payment_id}";
   $result = $mysqli->query($sql);
   $row = $result->fetch_assoc();
   $cust_id = $row['Cust_ID'];

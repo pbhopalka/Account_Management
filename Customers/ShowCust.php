@@ -29,9 +29,20 @@ require_once("functions.php");
     <link rel="import" href="../trying_design/bower_components/paper-dialog/paper-dialog.html">
     <link rel="import" href="../trying_design/bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
     <link rel="import" href="../trying_design/bower_components/paper-styles/color.html">
+    <link rel="import" href="../trying_design/bower_components/paper-material/paper-material.html">
 		<link rel="import" href="../trying_design/bower_components/paper-tooltip/paper-tooltip.html">
 
     <link rel="stylesheet" href="../trying_design/styles.css">
+    <link rel="stylesheet" href="table.less">
+
+    <style>
+    #table-material{
+      margin-left: 32px;
+      margin-right: 32px;
+      margin-top: 32px;
+    }
+    </style>
+
     </head>
     <body>
       <paper-toolbar>
@@ -40,21 +51,26 @@ require_once("functions.php");
 				<paper-icon-button id="addCust"icon="add" onclick="location.href='AddCust.php'">Add new Bill></paper-icon-button>
 				<paper-tooltip for="addCust" offset="0">Add new Customer</paper-tooltip>
       </paper-toolbar>
+      <paper-material id="table-material" class="table-condensed">
+      
       <?php
 $sql = "SELECT * From customer_details";
 $result = $mysqli->query($sql);
-if($result->num_rows > 0){
-	table_cust();
+if($result->num_rows <= 0){
+	echo '<p style="font-weight: 400; text-align: center; padding-top: 32px;">No payment entries. Press the Add button to add entries.</p><br>';
+}
+else{
+  table_cust();
 	while($row = $result->fetch_assoc()){
 		cust_details($row);
 	}
 	end_table();
-	_link("Add Costumers","AddCust.php");
-	_link("Index Page","../index.php");
-
-
 }
-else
-	echo "No Customer's Added";
-
 ?>
+</paper-material>
+<?php
+_link("Add Costumers","AddCust.php");
+_link("Index Page","../index.php");
+?>
+</body>
+</html>

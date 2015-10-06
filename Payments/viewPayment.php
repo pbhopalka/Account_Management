@@ -29,9 +29,19 @@
       <link rel="import" href="../trying_design/bower_components/paper-dialog/paper-dialog.html">
       <link rel="import" href="../trying_design/bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
       <link rel="import" href="../trying_design/bower_components/paper-styles/color.html">
+      <link rel="import" href="../trying_design/bower_components/paper-material/paper-material.html">
   		<link rel="import" href="../trying_design/bower_components/paper-tooltip/paper-tooltip.html">
 
       <link rel="stylesheet" href="../trying_design/styles.css">
+
+      <link rel="stylesheet" href="../includes/table.less">
+      <style>
+      #table-material{
+        margin-left: 32px;
+        margin-right: 32px;
+        margin-top: 32px;
+      }
+      </style>
       </head>
       <body>
         <paper-toolbar>
@@ -42,13 +52,15 @@
           <paper-icon-button id="remove" src="../img/delete.png" onclick="location.href='removePayment.php?condition=all'">Remove Payment</paper-icon-button>
   				<paper-tooltip for="remove" offset="0">Remove All</paper-tooltip>
         </paper-toolbar>
+        <paper-material id="table-material" class="table-condensed">
+
   <?php
   $sql = "SELECT * FROM payment_record";
   $result = $mysqli->query($sql);
   if ($result->num_rows <=0){
     $sql = "ALTER TABLE payment_record auto_increment = 1";
     $result = $mysqli->query($sql);
-    echo 'No payment entries<br>';
+    echo '<p style="font-weight: 400; text-align: center; padding-top: 32px;">No payment entries. Press the Add button to add entries.</p><br>';
   }
   else{
     payment_table();
@@ -64,10 +76,12 @@
     end_table();
   }
 ?>
-
+</paper-material>
+<!--
    <button id="index" type="submit"><a href="removePayment.php?condition=all">Remove all</a></button><br>
    <button id="index" type="submit"><a href="addPayment.php">Add Another Payment</a></button><br>
    <button id="index" type="submit"><a href="../index.php">Index</a></button><br>
-   <button id="logout" type="submit"><a href="../logout.php">Logout</a></button>
+-->
  </body>
+
  </html>

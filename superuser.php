@@ -72,7 +72,17 @@
     --paper-card-header-color: var(--paper-pink-500);
   }
   #customers{
-    float:right;
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+    float:left;
+  }
+  #payments{
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 30px;
+    float: right;
   }
 </style>
 
@@ -111,7 +121,7 @@
   </paper-toolbar>
 
 <div id="cards">
-  <div id="customers" >
+  <div >
   <paper-card heading="Customers">
     <paper-fab icon="add" onclick="location.href='Customers/AddCust.php'" class="green"></paper-fab>
     <div class="card-actions">
@@ -127,6 +137,7 @@
   </paper-card>
 </div>
 
+<div>
   <paper-card heading="Payments">
     <paper-fab icon="add" onclick="location.href='Payments/addPayment.php'"class="blue"></paper-fab>
     <div class="card-actions">
@@ -139,7 +150,7 @@
     <paper-button onclick="location.href='Ledger/ViewLedger.php'">View</paper-button>
   </div>
 </paper-card>
-
+</div>
 </div>
 <!--
   <button id="logout" type="submit"><a href="logout.php">Logout</a></button><br>
