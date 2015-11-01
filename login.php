@@ -32,13 +32,14 @@ else {
   $sql = "SELECT * FROM manager WHERE username = '{$username}' AND password = '{$password}'";
   $result = $mysqli->query($sql);
   //Selecting the role so that later, page for superuser and normal can be decided
-  $sql2 = "SELECT role FROM manager WHERE username = '{$username}' AND password = '{$password}'";
+  $sql2 = "SELECT Username,role FROM manager WHERE username = '{$username}' AND password = '{$password}'";
   $login = $mysqli->query($sql2);
   $row = $login->fetch_assoc();
   //$row contains role. Use $row['role'] to get the role name and putting that in the if condition
   if ($result->num_rows){
     //echo 'Login successful';
     $_SESSION['login_user']=$row['role'];
+    $_SESSION['username']=$row['Username'];
     //die();
     header('Location: index.php');
   }

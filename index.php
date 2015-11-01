@@ -3,7 +3,7 @@ require_once ("includes/global.php");
 session_start();
 //echo $_SESSION['login_user'];
 if ($_SESSION['login_user'] == 'Superuser'){
-  header('Location: superuser.php') && die();
+  header('Location: dashboard/index.php') && die();
 }
 else if ($_SESSION['login_user'] == 'Normal'){
   header('Location: normalUser.php') && die();
