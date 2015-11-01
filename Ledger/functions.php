@@ -30,23 +30,28 @@ function _link($a,$b){
 }
 
 function end_table(){
-	echo "</table><br>";
+	echo "</tbody></table><br>";
 }
 
 function table_l(){
-	echo '<table border="1" >
-			<tr>
-				<th>Date</th>
-				<th>Bill Amount</th>
-				<th>Payment Amount</th>
-			</tr>';
+	echo '<div class="table-responsive-vertical shadow-z-1">
+		<!-- Table starts here -->
+		<table id="table" class="table table-hover table-mc-light-blue">
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>Payment Amount</th>
+						<th>Bill Amount</th>
+					</tr>
+				</thead>
+				<tbody>';
 }
 function l_details($row){
 	echo '<tr>
-    <td><a href=LedgerDetails.php?query=' . $row["Date"]  .'>'. $row["Date"].'</a></td>
-    <td>'.$row["Bill_Amount"].'</td>
-    <td>'.$row["Payment_Received"].'</td>
-  </tr>';
+		<td data-title="Date"><a href=LedgerDetails.php?query=' . $row["Date"]  .'>'. $row["Date"].'</a></td>
+		<td data-title="Payment Amt">'.$row["Payment_Received"].'</td>
+		<td data-title="Bill Amt">'.$row["Bill_Amount"].'</td>
+	</tr>';
 }
 
 function table_bill(){

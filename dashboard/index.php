@@ -241,9 +241,9 @@
     //echo $sql;
     $result = $mysqli->query($sql);
     if ($result->num_rows <=0){
-      $sql = "ALTER TABLE payment_record auto_increment = 1";
+      $sql = "ALTER TABLE bill_record auto_increment = 1";
       $result = $mysqli->query($sql);
-      echo '<p style="font-weight: 400; text-align: center; padding-top: 32px;">No payment entries. Press the Add button to add entries.</p><br>';
+      echo '<p style="font-weight: 400; text-align: center; padding-top: 32px;">No bill entries. Press the Add button to add entries.</p><br>';
     }
     else{
       echo '<div class="table-responsive-vertical shadow-z-1">
