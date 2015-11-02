@@ -1,6 +1,7 @@
 <?php
 require_once ("includes/global.php");
-session_start();
+error_reporting(E_ERROR | E_PARSE);
+//session_start();
 //echo $_SESSION['login_user'];
 if ($_SESSION['login_user'] == 'Superuser'){
   header('Location: dashboard/index.php') && die();

@@ -35,27 +35,33 @@ function _link($a,$b){
 }
 
 function table_bill(){
-	echo '<table border="1" >
-			<tr>
-				<th>Bill ID</th>
-				<th>Cust Name</th>
-				<th>Date</th>
-				<th>Amount</th>
-			</tr>';
+  echo '<div class="table-responsive-vertical shadow-z-1">
+		<!-- Table starts here -->
+		<table id="table" class="table table-hover table-mc-light-blue">
+				<thead>
+					<tr>
+            <th>Bill ID</th>
+            <th>Cust Name</th>
+						<th>Date</th>
+						<th>Amount</th>
+					</tr>
+				</thead>
+				<tbody>';
 }
 function bill_details($cname,$row){
 	echo '<tr>
-    <td>'.$row["Bill_ID"].'</td>
-    <td><a href="../Customers/ICust.php?query=' . $row["Cust_ID"]  .'">'. $cname.'</a></td>
-    <td>'.$row["Date"].'</td>
-    <td>'.$row["Amount"].'</td>
-    <td><button id="submit" type="submit"><a href="removeBill.php?query='.$row["Bill_ID"].'">Remove Bill</a></button></td>
+    <td data-title="ID">'.$row["Bill_ID"].'</td>
+    <td data-title="Name"><a href="../Customers/ICust.php?query=' . $row["Cust_ID"]  .'">'. $cname.'</a></td>
+    <td data-title="Date">'.$row["Date"].'</td>
+    <td data-title="Amount">'.$row["Amount"].'</td>
+    <td><a href="removeBill.php?query='.$row["Bill_ID"].'"><img src = "../img/delete_24.png"></img></a></td>
   </tr>';
 }
 
 
 function end_table(){
-	echo "</table>";
+	echo "</tbody>
+  </table>";
 }
 
 

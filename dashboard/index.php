@@ -151,7 +151,7 @@
             </div>
             <div style="width: 50%; margin-right: 0px; float:right;">
               <?php
-                date_default_timezone_set('Kolkata');
+                date_default_timezone_set('Asia/Kolkata');
                 $day = date("l");
                 $date = date("l jS \of F Y");
               ?>
