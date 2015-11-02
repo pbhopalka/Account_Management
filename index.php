@@ -55,7 +55,7 @@ else if ($_SESSION['login_user'] == 'Normal'){
       <div class="card-actions">
         <section onclick="clickHandler(event)">
           <!--Choose the appropriate data-dialog: either animated or modal-->
-           <paper-button data-dialog="animated">Login</paper-button>
+           <paper-button data-dialog="animated" onclick="location.href='login.php'">Login</paper-button>
 
          <!--Animation Dialog box-->
            <paper-dialog id="animated" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop>
