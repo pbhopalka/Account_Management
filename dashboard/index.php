@@ -221,9 +221,6 @@
       end_table();
     }
   ?>
-          <div class="mdl-card__actions mdl-card--border">
-            <a href="../Ledger/ViewLedger.php" class="mdl-button mdl-js-button mdl-js-ripple-effect">More</a>
-          </div>
           </paper-material>
           </div>
 
@@ -275,10 +272,6 @@
       end_table();
     }
   ?>
-
-          <div class="mdl-card__actions mdl-card--border">
-            <a href="../Ledger/ViewLedger.php" class="mdl-button mdl-js-button mdl-js-ripple-effect">More</a>
-          </div>
           </paper-material>
           </div>
         <!--  <div class="demo-cards mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
