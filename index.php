@@ -38,37 +38,28 @@ else if ($_SESSION['login_user'] == 'Normal'){
 
   <style>
   #cards{
-    @apply(--layout-vertcal);
-    @apply(--center-justified);
-    max-width: 300px;
+    max-width: 250px;
     margin-left: auto;
     margin-right: auto;
+    max-height: 200px;
+    margin-top: 30vh;
+    margin-bottom: auto;
   }
 
   </style>
 </head>
-<body unresolved>
-
+<body unresolved style="background-color:#f5f5f5">
   <div id="cards">
     <paper-card heading="Welcome to ACMS">
-      <div class="card-content">To proceed, click on Login</div>
+      <div class="card-content" style="text-align: center;"><strong>Credits:</strong><br>Piyush Bhopalka<br>Prabhav Adhikari</div>
       <div class="card-actions">
         <section onclick="clickHandler(event)">
           <!--Choose the appropriate data-dialog: either animated or modal-->
-           <paper-button data-dialog="animated" onclick="location.href='login.php'">Login</paper-button>
+           <paper-button onclick="location.href='login.php'">Login</paper-button>
 
          <!--Animation Dialog box-->
            <paper-dialog id="animated" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop>
-             <h2>Login</h2>
-             <p>Enter your credentials</p>
-             <div class="vertical-section">
-               <paper-input label="Username"></paper-input>
-               <paper-input label="Password" type="password"></paper-input>
-               <div class="buttons">
-               <paper-button dialog-confirm autofocus method="post" onclick="location.href='login.php'">Login</paper-button>
-               <paper-button dialog-dismiss>No</paper-button>
-              </div>
-             </div>
+             <p>Piyush Bhopalka</p>
          </paper-dialog>
        </section>
         <!--<paper-button onclick="location.href='login.php'"view>Login</paper-button>-->

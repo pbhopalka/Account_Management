@@ -10,18 +10,76 @@ else if (! isset($_POST['username'])){
 <html>
   <head>
     <title>ACMS: Login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <script src="trying_design/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="trying_design/bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="trying_design/bower_components/paper-toolbar/paper-toolbar.html">
+    <link rel="import" href="trying_design/bower_components/font-roboto/roboto.html">
+    <link rel="import" href="trying_design/bower_components/paper-button/paper-button.html">
+    <link rel="import" href="trying_design/bower_components/neon-animation/neon-animation.html">
+    <link rel="import" href="trying_design/bower_components/paper-card/paper-card.html">
+    <link rel="import" href="trying_design/bower_components/paper-checkbox/paper-checkbox.html">
+    <link rel="import" href="trying_design/bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="trying_design/bower_components/paper-input/paper-input.html">
+    <link rel="import" href="trying_design/bower_components/paper-fab/paper-fab.html">
+    <link rel="import" href="trying_design/bower_components/paper-tabs/paper-tabs.html">
+    <link rel="import" href="trying_design/bower_components/paper-toast/paper-toast.html">
+    <link rel="import" href="trying_design/bower_components/paper-dialog/paper-dialog.html">
+    <link rel="import" href="trying_design/bower_components/paper-styles/color.html">
+
+    <link rel="stylesheet" href="trying_design/styles.css">
+
+    <style>
+    #cards{
+      max-width: 250px;
+      margin-left: auto;
+      margin-right: auto;
+      max-height: 200px;
+      margin-top: 30vh;
+      margin-bottom: auto;
+    }
+
+    </style>
   </head>
-  <body>
-    <div id="container-sign-in">
-      <form id=form-sign-in action="" method="post">
-        <h2>Sign in here</h2>
-        <input id="username" name="username" type="text" placeholder="Username">
-        <input id="password" name="password" type="password" placeholder="Password">
-        <button id="submit" type="submit">Sign In</button>
-      </form>
+  <body style="background-color:#f5f5f5">
+    <div id="cards">
+      <paper-card heading="ACMS">
+        
+        <div class="card-actions">
+          <form id=login-form action="login.php" method="post">
+            <paper-input id="username" name="username" label="Username" type="text"></paper-input>
+            <paper-input id="password" name="password" label="Password" type="password"></paper-input>
+            <paper-button id="submit" onclick="document.forms['login-form'].submit()">Login</paper-button>
+          </form>
+          <!--<paper-button onclick="location.href='login.php'"view>Login</paper-button>-->
+        </div>
+      </paper-card>
     </div>
+
+    <script>
+        function clickHandler(e) {
+          var button = e.target;
+          while (!button.hasAttribute('data-dialog') && button !== document.body) {
+            button = button.parentElement;
+          }
+          if (!button.hasAttribute('data-dialog')) {
+            return;
+          }
+          var id = button.getAttribute('data-dialog');
+          var dialog = document.getElementById(id);
+          if (dialog) {
+            dialog.open();
+          }
+        }
+      </script>
+
+
+    <script src="trying_design/main.js"></script>
+
   </body>
 </html>
 <?php
