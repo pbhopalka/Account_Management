@@ -105,9 +105,11 @@
           <span class="mdl-layout-title">Admin Panel</span>
           <div class="mdl-layout-spacer"></div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+<!--SEARCH BUTTON
             <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
               <img src ="../img/magnify.png"/>
             </label>
+-->
             <div class="mdl-textfield__expandable-holder">
               <input class="mdl-textfield__input" type="text" id="search" />
               <label class="mdl-textfield__label" for="search">Enter your query...</label>
@@ -158,16 +160,16 @@
               <h5 style="text-align: right;"><?php echo $date;?></h5>
             </div>
           </div>
-          <div class="demo-card mdl-cell mdl-cell--12-col mdl-grid">
+          <div class='demo-card mdl-cell mdl-cell--12-col mdl-grid'>
             <div style="margin-left: 2px; margin-right: 2px;">
               <a href="../Bills/AddBill.php" id="Bills"
                 class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">
                 New Bill
               </a>
             </div>
-            <div style="margin-left: 2px; margin-right: 2px;">
-              <a href="../Payments/addPayment.php" id="Bills"
-              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">
+            <div style='margin-left: 2px; margin-right: 2px;'>
+              <a href='../Payments/addPayment.php' id='Bills'
+              class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast'>
               New Payment</a>
             </div>
           </div>

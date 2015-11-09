@@ -6,43 +6,10 @@ require_once("functions.php");
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ACMS: Make Payment</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-
-    <script src="../trying_design/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-
-    <link rel="import" href="../trying_design/bower_components/iron-icons/iron-icons.html">
-    <link rel="import" href="../trying_design/bower_components/iron-form/iron-form.html">
-    <link rel="import" href="../trying_design/bower_components/paper-toolbar/paper-toolbar.html">
-    <link rel="import" href="../trying_design/bower_components/font-roboto/roboto.html">
-    <link rel="import" href="../trying_design/bower_components/paper-button/paper-button.html">
-    <link rel="import" href="../trying_design/bower_components/neon-animation/neon-animation.html">
-    <link rel="import" href="../trying_design/bower_components/paper-card/paper-card.html">
-    <link rel="import" href="../trying_design/bower_components/paper-checkbox/paper-checkbox.html">
-    <link rel="import" href="../trying_design/bower_components/paper-icon-button/paper-icon-button.html">
-    <link rel="import" href="../trying_design/bower_components/paper-input/paper-input.html">
-    <link rel="import" href="../trying_design/bower_components/paper-fab/paper-fab.html">
-    <link rel="import" href="../trying_design/bower_components/paper-tabs/paper-tabs.html">
-    <link rel="import" href="../trying_design/bower_components/paper-toast/paper-toast.html">
-    <link rel="import" href="../trying_design/bower_components/paper-dialog/paper-dialog.html">
-    <link rel="import" href="../trying_design/bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
-    <link rel="import" href="../trying_design/bower_components/paper-styles/color.html">
-    <link rel="import" href="../trying_design/bower_components/paper-material/paper-material.html">
-		<link rel="import" href="../trying_design/bower_components/paper-tooltip/paper-tooltip.html">
-
-    <link rel="stylesheet" href="../trying_design/styles.css">
-    <link rel="stylesheet" href="table.less">
-
-    <style>
-    #table-material{
-      margin-left: 32px;
-      margin-right: 32px;
-      margin-top: 32px;
-    }
-    </style>
-
+    <title>ACMS:Show Customers</title>
+    <?php
+		_Header();
+   ?>
     </head>
     <body>
       <paper-toolbar>
@@ -52,7 +19,7 @@ require_once("functions.php");
 				<paper-tooltip for="addCust" offset="0">Add new Customer</paper-tooltip>
       </paper-toolbar>
       <paper-material id="table-material" class="table-condensed">
-      
+		
       <?php
 $sql = "SELECT * From customer_details";
 $result = $mysqli->query($sql);
@@ -67,9 +34,10 @@ else{
 	end_table();
 }
 ?>
-</paper-material>
+<div>
 <?php
 _link("Add Costumers","AddCust.php");
+echo "<br>";
 _link("Index Page","../index.php");
 ?>
 </body>
