@@ -92,7 +92,7 @@ endform();?>
 </p>
 
 <script>
-var x=3;
+var x=3,am=0;
 function update(){
 	//alert("a");
 	var table = document.getElementById("Bills");
@@ -132,12 +132,17 @@ function Remo(t){
 	update();
 }
 function Send(){
-	alert("Sure?");
-	e = document.getElementById("Items");
-	t = document.getElementById("Bills");
-	t = t.rows.length;
-	e.innerHTML = "<input type=hidden value=" +(t-1)+ " name='ItemsNo'>";
-	alert(e.innerHTML);
+	update();
+	if(am==0)
+		alert("Bill can't have amount 0");
+	else{
+		alert("Sure?");
+		e = document.getElementById("Items");
+		t = document.getElementById("Bills");
+		t = t.rows.length;
+		e.innerHTML = "<input type=hidden value=" +(t-1)+ " name='ItemsNo'>";
+		//alert(e.innerHTML);
+	}
 }
 function AddItem() {
     var table = document.getElementById("Bills");

@@ -10,7 +10,12 @@ $total = $_POST["ItemsNo"];
 echo "<br> $date";
 echo "<br> $amt";
 echo "<br> $cid";
-
+if($amt==0){
+	echo "NOPt";
+	header('location:Invoice.php');
+}
+else{
+echo "SSD";
 $sql = "INSERT INTO bill_record(Date,Cust_ID,Amount) VALUES('$date','$cid',$amt)";
 
 if($mysqli->query($sql)===TRUE){
@@ -42,7 +47,6 @@ if($mysqli->query($sql)===TRUE){
 			echo $mysqli->error;
 		}
 	}
-
 	
 	echo "<br><br> BILL ID iS $billID";
 	for($i = 0;$i<$total;$i++){
@@ -53,7 +57,7 @@ if($mysqli->query($sql)===TRUE){
 		$sql = "Insert Into bills values($billID, '$it',$qt,$rt)";
 		$mysqli->query($sql);
  	}
-	//header('location:ShowBills.php');
+	header('location:ShowBills.php');
 
 }
 else{
@@ -61,6 +65,6 @@ else{
 	header('location:Invoice.php');
 }
 
-
+}
 
 ?>
