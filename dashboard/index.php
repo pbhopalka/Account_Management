@@ -162,7 +162,7 @@
           </div>
           <div class='demo-card mdl-cell mdl-cell--12-col mdl-grid'>
             <div style="margin-left: 2px; margin-right: 2px;">
-              <a href="../Bills/AddBill.php" id="Bills"
+              <a href="../Bills/Invoice.php" id="Bills"
                 class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">
                 New Bill
               </a>

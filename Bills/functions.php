@@ -52,9 +52,9 @@ function endform(){
 }
 
 function _link($a,$b){
-	
-	
-echo "	
+
+
+echo "
 <div style='margin-left: 2px; margin-right: 2px;'>
   <a href={$b} class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast'>
   {$a}</a>
@@ -63,7 +63,7 @@ echo "
 }
 
 function table_bill(){
-  echo '<div class="table-responsive-vertical shadow-z-1">
+  echo '<div class="table-responsive-vertical">
 		<!-- Table starts here -->
 		<table id="table" class="table table-hover table-mc-light-blue">
 				<thead>
@@ -78,18 +78,17 @@ function table_bill(){
 }
 
 function table_inv(){
-  echo '<div class="table-responsive-vertical shadow-z-1">
+  echo '<div class="table-responsive-vertical">
 		<!-- Table starts here -->
 		<table id="Bills" class="table table-hover table-mc-light-blue">
 				<thead>
 					<tr>
             <th>S.No</th>
             <th>Item</th>
-			<th>Qty</th>
-			<th>Rate</th>
-			<th>Amount</th>
-			
-			</tr>
+						<th>Qty</th>
+						<th>Rate</th>
+						<th>Amount</th>
+					</tr>
 				</thead>
 				<tbody>';
 }

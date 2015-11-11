@@ -15,7 +15,7 @@ if($amt==0){
 	header('location:Invoice.php');
 }
 else{
-echo "SSD";
+echo "<br>SSD";
 $sql = "INSERT INTO bill_record(Date,Cust_ID,Amount) VALUES('$date','$cid',$amt)";
 
 if($mysqli->query($sql)===TRUE){
@@ -23,7 +23,7 @@ if($mysqli->query($sql)===TRUE){
 	$billID = $mysqli->insert_id;
 	$sql = "Update customer_details set Pending_Amount =  Pending_Amount + $amt where Cust_ID=$cid";
 	$mysqli->query($sql);
-	
+
 	//update ledger table
 	//check if first entry
 	$sql = "select Date from ledger where Date='$date'";
@@ -47,21 +47,24 @@ if($mysqli->query($sql)===TRUE){
 			echo $mysqli->error;
 		}
 	}
-	
+
 	echo "<br><br> BILL ID iS $billID";
+	echo "$total";
 	for($i = 0;$i<$total;$i++){
 		$it = $_POST["Item"][$i]; //item
  		$qt = $_POST["Qty"][$i]; //qty
  		$rt = $_POST["Rate"][$i]; //rate
-		
+
 		$sql = "Insert Into bills values($billID, '$it',$qt,$rt)";
 		$mysqli->query($sql);
  	}
+	//die();
 	header('location:ShowBills.php');
 
 }
 else{
 	echo "Error: " . $sql . "<br>" . $mysqli->error;
+	//die();
 	header('location:Invoice.php');
 }
 

@@ -130,7 +130,7 @@
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
           <a class="mdl-navigation__link" href="../index.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
-          <a class="mdl-navigation__link" href="AddBill.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">add</i> Add Bill</a>
+          <a class="mdl-navigation__link" href="Invoice.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">add</i> Add Bill</a>
           <a class="mdl-navigation__link" href="ShowBills.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Show All Bills</a>
           <div class="mdl-layout-spacer"></div>
 <!--Add help here -->

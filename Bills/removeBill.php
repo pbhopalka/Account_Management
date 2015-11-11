@@ -3,6 +3,8 @@ require_once("../includes/global.php");
   echo $_GET['query'];
   echo 'here';
   $bill_id = $_GET['query'];
+  $sql = "DELETE FROM bills WHERE Bill_ID = {$bill_id}";
+  $result = $mysqli->query($sql);
   $sql = "SELECT Cust_ID FROM bill_record WHERE Bill_ID = {$bill_id}";
   $result = $mysqli->query($sql);
   $row = $result->fetch_assoc();
