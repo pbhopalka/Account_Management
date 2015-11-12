@@ -1,8 +1,10 @@
 <?php
 
 require_once("../includes/global.php");
-require_once("functions.php");
+require_once("functions.php");?>
 
+<p><a href="../index.php">Index Page</a></p>
+<?php
 $sql = "Select * from customer_details where Cust_ID={$_GET['query']}";
 $res = $mysqli->query($sql);
 
