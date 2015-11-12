@@ -156,6 +156,7 @@ require_once('functions.php');
     <input type=button onclick="RemoveItem()" value='Remove All Items'></input>
     <p id="Aa">Total Amount: <paper-input disabled right name='Amout' id="Amout" value=0 maxlength=6 style="border:none;"></paper-input></p>
     <text id="Items"><input type=hidden name="ItemsNo"></text>
+    <text id="NewAmt"><input type=hidden name="NewAmtName"></text>
     <!--<input type=submit onclick="Send()"></input></paper-fab>-->
 
 
@@ -193,7 +194,7 @@ endform();?>
 
   		e[0].innerHTML = i;
   		var aam =  e[3].children[0].value * e[2].children[0].value;
-  		e[4].innerHTML = "<paper-input disabled text name='Amt[]' value='" +aam + "'maxlength=4></paper-input>";
+  		e[4].innerHTML = "<paper-input text readonly name='Amt[]' value='" + aam + "'maxlength=4></paper-input>";
   		e[5].innerHTML = "<paper-button type='button' onclick='Remo(" + i + ")'><img src = '../img/delete_24.png'></img></paper-button>";
   		am = am + e[3].children[0].value * e[2].children[0].value;
 
@@ -219,12 +220,14 @@ endform();?>
   	else{
   		alert("Sure?");
   		e = document.getElementById("Items");
+  		ed = document.getElementById("NewAmt");
       //s = document.getElementById("cid");
   		t = document.getElementById("Bills");
       //alert(s.innerHTML);
   		t = t.rows.length;
       alert("This is done");
   		e.innerHTML = "<input type=hidden value=" +(t-1)+ " name='ItemsNo'>";
+  		ed.innerHTML = "<input type=hidden value=" +am+ " name='NewAmtName'>";
   		alert(e.innerHTML);
       document.getElementById('data').submit();
   	}

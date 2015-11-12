@@ -4,12 +4,13 @@ require_once("../includes/global.php");
 _Header("BillAd");
 
 $date = date("Y\-m\-d");
-$amt =$_POST["Amout"];
+$amt =$_POST["NewAmtName"];
 $cid =$_POST["cid"];
 $total = $_POST["ItemsNo"];
 echo "<br> $date";
 echo "<br> $amt";
 echo "<br> $cid";
+
 if($amt==0){
 	echo "NOPt";
 	header('location:Invoice.php');
