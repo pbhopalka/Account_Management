@@ -49,6 +49,14 @@
   .horizontal-section {
     text-align: center;
   }
+
+  #container-sign-in {
+    margin:10px 10px;
+  }
+
+  #date, #cust_list, #amount{
+    margin:15px 15px 15px 15px;
+  }
 </style>
 
   </head>
@@ -59,7 +67,7 @@
     </paper-toolbar>
     <div id="container-sign-in">
           <form id=form-sign-in action="updatePayment.php" method="post">
-            <input id="date" name="payment_date" type="date" placeholder="Date">
+            <input id="date" name="payment_date" type="date" placeholder="Date"><br>
             <select id="cust_list" name="payment_cust">
     <?php
     //Display all the customer names in the dropdown list
@@ -72,8 +80,8 @@
         echo "<option value='".$row['Cust_ID']."'>".$row['Cust_Name']."</option>";
       }
     ?>
-            </select>
-            <input id="amount" name="payment_amount" type="text" placeholder="Amount">
+            </select><br>
+            <input id="amount" name="payment_amount" type="text" placeholder="Amount"><br>
             <button id="submit" type="submit">Submit</button>
           </form>
         </div>
