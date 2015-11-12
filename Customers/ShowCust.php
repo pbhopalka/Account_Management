@@ -18,8 +18,8 @@ require_once("functions.php");
 				<paper-icon-button id="addCust"icon="add" onclick="location.href='AddCust.php'">Add new Bill></paper-icon-button>
 				<paper-tooltip for="addCust" offset="0">Add new Customer</paper-tooltip>
       </paper-toolbar>
-      <paper-material id="table-material" class="table-condensed">
-		
+      <paper-material id="table-material" class="table-condensed" style="margin:10px 10px;">
+
       <?php
 $sql = "SELECT * From customer_details";
 $result = $mysqli->query($sql);
@@ -34,6 +34,7 @@ else{
 	end_table();
 }
 ?>
+</paper-material>
 <div>
 <?php
 _link("Add Costumers","AddCust.php");

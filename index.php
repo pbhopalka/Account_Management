@@ -51,7 +51,10 @@ else if ($_SESSION['login_user'] == 'Normal'){
 <body unresolved style="background-color:#f5f5f5">
   <div id="cards">
     <paper-card heading="Welcome to ACMS">
-      <div class="card-content" style="text-align: center;"><strong>Credits:</strong><br>Piyush Bhopalka<br>Prabhav Adhikari</div>
+      <div class="card-content" style="text-align: center;">
+        Account Management System for Small Businesses<br><br>
+        <strong>Credits:</strong><br>Piyush Bhopalka<br>Prabhav Adhikari<br>Sakar Lamichhane
+      </div>
       <div class="card-actions">
         <section onclick="clickHandler(event)">
           <!--Choose the appropriate data-dialog: either animated or modal-->
