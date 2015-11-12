@@ -95,12 +95,37 @@ function table_inv(){
 
 function bill_details($cname,$row){
 	echo '<tr>
-    <td data-title="ID">'.$row["Bill_ID"].'</td>
+    <td data-title="ID"><a href="BillDetails.php?query='.$row["Bill_ID"].'">'.$row["Bill_ID"].'</a></td>
     <td data-title="Name"><a href="../Customers/ICust.php?query=' . $row["Cust_ID"]  .'">'. $cname.'</a></td>
     <td data-title="Date">'.$row["Date"].'</td>
     <td data-title="Amount">'.$row["Amount"].'</td>
     <td><a href="removeBill.php?query='.$row["Bill_ID"].'"><img src = "../img/delete_24.png"></img></a></td>
   </tr>';
+}
+
+function bill_header(){
+	echo '<table border="1" >
+			<tr>
+				<th>S.No</th>
+				<th>Item</th>
+				<th>Quantity</th>
+				<th>Rate</th>
+				<th>Amount</th>
+			</tr>';
+}
+
+function bill_item($count,$row){
+	echo '<tr>
+		<td>'.$count.'</td>
+    <td>'.$row["Item"].'</td>
+    <td>'.$row["Quantity"].'</td>
+    <td>'.$row["Price"].'</td>
+		<td>'.$row["Price"] * $row["Quantity"].'</td>
+  </tr>';
+}
+
+function end_bill(){
+	echo '</table>';
 }
 
 function end_table(){
