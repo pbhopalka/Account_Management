@@ -55,9 +55,10 @@ if($mysqli->query($sql)===TRUE){
 		$it = $_POST["Item"][$i]; //item
  		$qt = $_POST["Qty"][$i]; //qty
  		$rt = $_POST["Rate"][$i]; //rate
-
-		$sql = "Insert Into bills values($billID, '$it',$qt,$rt)";
-		$mysqli->query($sql);
+		if($qt!=0 && $rt!=0){
+			$sql = "Insert Into bills values($billID, '$it',$qt,$rt)";
+			$mysqli->query($sql);
+		}
  	}
 	//die();
 	header('location:ShowBills.php');
