@@ -28,7 +28,7 @@ if($mysqli->query($sql)===TRUE)
 	header('location:ShowCust.php');
 else{
 	echo "Error: " . $sql . "<br>" . $mysqli->error;
-	//header('location:AddCust.php');
+	header('location:AddCust.php');
 }
 
 
