@@ -24,7 +24,7 @@ require_once("functions.php");
 $sql = "SELECT * From customer_details";
 $result = $mysqli->query($sql);
 if($result->num_rows <= 0){
-	echo '<p style="font-weight: 400; text-align: center; padding-top: 32px;">No payment entries. Press the Add button to add entries.</p><br>';
+	echo '<p style="font-weight: 400; text-align: center; padding-top: 32px;">No Customer entries. Press the Add button to add entries.</p><br>';
 }
 else{
   table_cust();
@@ -37,7 +37,7 @@ else{
 </paper-material>
 <div>
 <?php
-_link("Add Costumers","AddCust.php");
+_link("Add Customers","AddCust.php");
 echo "<br>";
 _link("Index Page","../index.php");
 ?>

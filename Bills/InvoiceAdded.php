@@ -10,9 +10,10 @@ $total = $_POST["ItemsNo"];
 echo "<br> $date";
 echo "<br> $amt";
 echo "<br> $cid";
+echo "<br> $total";
 
 if($amt==0){
-	echo "NOPt";
+	echo "NOPE";
 	header('location:Invoice.php');
 }
 else{
@@ -51,7 +52,7 @@ if($mysqli->query($sql)===TRUE){
 
 	echo "<br><br> BILL ID iS $billID";
 	echo "$total";
-	for($i = 0;$i<$total;$i++){
+	for($i = 0;$i<=$total;$i++){
 		$it = $_POST["Item"][$i]; //item
  		$qt = $_POST["Qty"][$i]; //qty
  		$rt = $_POST["Rate"][$i]; //rate

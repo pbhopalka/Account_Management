@@ -213,6 +213,8 @@ endform();?>
 
   function Send() {
   	update();
+  	var table = document.getElementById("Bills");
+  	//alert(table.rows.length);
   	if(am==0){
         document.querySelector('#toast').show();
     }
@@ -225,10 +227,10 @@ endform();?>
   		t = document.getElementById("Bills");
       //alert(s.innerHTML);
   		t = t.rows.length;
-      alert("This is done");
+      //~ alert("This is done");
   		e.innerHTML = "<input type=hidden value=" +(t-1)+ " name='ItemsNo'>";
   		ed.innerHTML = "<input type=hidden value=" +am+ " name='NewAmtName'>";
-  		alert(e.innerHTML);
+  		//~ alert(e.innerHTML);
       document.getElementById('data').submit();
   	}
   }
@@ -246,9 +248,9 @@ endform();?>
       var cell5 = row.insertCell(4);
       var cell6 = row.insertCell(5);
       cell1.innerHTML = x;
-      cell2.innerHTML = "<paper-input type=text ></paper-input>";
-      cell3.innerHTML = "<paper-input type=text value=0 onchange='update()'></paper-input>";
-      cell4.innerHTML = "<paper-input type=text value=0 onchange='update()'></paper-input>";
+      cell2.innerHTML = "<paper-input name='Item[]' type=text ></paper-input>";
+      cell3.innerHTML = "<paper-input name='Qty[]' type=text value=0 onchange='update()'></paper-input>";
+      cell4.innerHTML = "<paper-input name='Rate[]' type=text value=0 onchange='update()'></paper-input>";
       cell5.innerHTML = "";
       var butto = "<paper-button type='button' onclick='Remo(" + (x-1) + ")'><img src = '../img/delete_24.png'></img></paper-button>";
       cell6.innerHTML = butto;
@@ -278,9 +280,9 @@ endform();?>
       var cell5 = row.insertCell(4);
       var cell6 = row.insertCell(5);
       cell1.innerHTML = x;
-      cell2.innerHTML = "<paper-input type=text ></paper-input>";
-      cell3.innerHTML = "<paper-input type=text value=0 onchange='update()'></paper-input>";
-      cell4.innerHTML = "<paper-input type=text value=0 onchange='update()'></paper-input>";
+      cell2.innerHTML = "<paper-input type=text name='Item[]' ></paper-input>";
+      cell3.innerHTML = "<paper-input type=text name='Qty[]' value=0 onchange='update()'></paper-input>";
+      cell4.innerHTML = "<paper-input type=text name='Rate[]' value=0 onchange='update()'></paper-input>";
       cell5.innerHTML = "";
       var butto = "<paper-button type='button' onclick='Remo(" + (x-1) + ")'><img src = '../img/delete_24.png'></img></paper-button>";
       cell6.innerHTML = butto;
